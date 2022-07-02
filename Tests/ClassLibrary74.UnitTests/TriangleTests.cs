@@ -64,5 +64,23 @@ namespace ClassLibrary74.UnitTests
                 Assert.Equal(area, (int)triangle.CalcArea());
             });
         }
+
+        [Fact]
+        public void Test_IsRectangleTriangle()
+        {
+            // Arrange
+            var triangle = new Triangle(3, 4, 5);
+            // Act & Assert
+            Assert.True(triangle.IsRectangleTriangle());
+        }
+
+        [Fact]
+        public void Test_IsRectangleTriangle_WhenTriangleIsNotRectangle()
+        {
+            // Arrange
+            var triangle = new Triangle(5, 5, 5);
+            // Act & Assert
+            Assert.False(triangle.IsRectangleTriangle());
+        }
     }
 }
